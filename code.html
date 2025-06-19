@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>vscode</title>
+</head>
+
+<body>
+
+<div>
+  <div>
+    <p><a href="portfolio.html">Go back here&nbsp;</a></p>
+    <p>import pandas as pd</p>
+  </div>
+  <div>&#160;</div>
+  <div>#functions used to recive inputs for later selection -Kenneth, Kaxing</div>
+  <br>
+  <div>def period_check():</div>
+  <div>&#160; &#160; periodN = (input("Enter region (1: 1978-1987, 2: 1988-1897, 3: 1998-2007, 4: 2008-2017)"))</div>
+  <div>&#160; &#160; if periodN &gt; "4" or periodN &lt; "1" :</div>
+  <div>&#160; &#160; &#160; &#160; &#160; &#160; print("Invalid period")</div>
+  <div>&#160; &#160; &#160; &#160; &#160; &#160; exit()</div>
+  <div>&#160; &#160; if periodN == "1":</div>
+  <div>&#160; &#160; &#160; &#160; print(f"Enter year period (1: 1978-1987, 2: 1988-1897, 3: 1998-2007, 4: 2008-2017): 1")</div>
+  <div>&#160; &#160; elif periodN == "2":</div>
+  <div>&#160; &#160; &#160; &#160; print(f"Enter year period (1: 1978-1987, 2: 1988-1897, 3: 1998-2007, 4: 2008-2017): 2")</div>
+  <div>&#160; &#160; elif periodN == "3":</div>
+  <div>&#160; &#160; &#160; &#160; print(f"Enter year period (1: 1978-1987, 2: 1988-1897, 3: 1998-2007, 4: 2008-2017): 3")</div>
+  <div>&#160; &#160; elif periodN == "4":</div>
+  <div>&#160; &#160; &#160; &#160; print(f"Enter year period (1: 1978-1987, 2: 1988-1897, 3: 1998-2007, 4: 2008-2017): 4")</div>
+  <div>&#160; &#160; return periodN</div>
+  <br>
+  <div>def region_check():</div>
+  <div>&#160; &#160; regionN = (input("Enter region (1: Asia, 2: Europe, 3: Others)"))</div>
+  <div>&#160; &#160; if regionN &gt; "3" or regionN &lt; "1":</div>
+  <div>&#160; &#160; &#160; &#160; print("Invalid region")</div>
+  <div>&#160; &#160; &#160; &#160; exit()</div>
+  <div>&#160; &#160; if regionN == "1" :</div>
+  <div>&#160; &#160; &#160; &#160; print(f"Enter region (1: Asia, 2: Europe, 3: Others): 1")</div>
+  <div>&#160; &#160; elif regionN == "2" :</div>
+  <div>&#160; &#160; &#160; &#160; print(f"Enter region (1: Asia, 2: Europe, 3: Others): 2")</div>
+  <div>&#160; &#160; elif regionN == "3" :</div>
+  <div>&#160; &#160; &#160; &#160; print(f"Enter region (1: Asia, 2: Europe, 3: Others): 3")</div>
+  <div>&#160; &#160; return regionN</div>
+  <div>&#160; &#160; &#160; &#160; </div>
+  <div>#Function shows what rows to select -Kenneth</div>
+  <div>def periodIs(x):</div>
+  <div>&#160; &#160; if x == "1":</div>
+  <div>&#160; &#160; &#160; &#160; return [0, 5, 119]</div>
+  <div>&#160; &#160; elif x == "2":</div>
+  <div>&#160; &#160; &#160; &#160; return [120, 125, 239]</div>
+  <div>&#160; &#160; elif x == "3":</div>
+  <div>&#160; &#160; &#160; &#160; return [240, 245, 359]</div>
+  <div>&#160; &#160; elif x == "4":</div>
+  <div>&#160; &#160; &#160; &#160; return [360, 365, 479]</div>
+  <div>#Function helps us select columns -Kenneth</div>
+  <div>def regionIs(x):</div>
+  <div>&#160; &#160; if x == "1":</div>
+  <div>&#160; &#160; &#160; &#160; return [' Brunei Darussalam ', ' Indonesia ', ' Malaysia ', ' Philippines ', ' Thailand ', ' Viet Nam ', ' Myanmar ', ' Japan ', ' Hong Kong ', ' China ', ' Taiwan ', ' Korea, Republic Of ', ' India ', ' Pakistan ', ' Sri Lanka ', ' Saudi Arabia ', ' Kuwait ', ' UAE ']</div>
+  <div>&#160; &#160; elif x == "2":</div>
+  <div>&#160; &#160; &#160; &#160; return [' United Kingdom ', ' Germany ', ' France ', ' Italy ', ' Netherlands ', ' Greece ', ' Belgium &amp; Luxembourg ', ' Switzerland ', ' Austria ', ' Scandinavia ', ' CIS &amp; Eastern Europe ']</div>
+  <div>&#160; &#160; elif x == "3":</div>
+  <div>&#160; &#160; &#160; &#160; return [' USA ', ' Canada ', ' Australia ', ' New Zealand ', ' Africa ']</div>
+  <div>&#160; &#160; </div>
+  <div>#runs period and region check and &#160;is then put into another function to find out what rows and columns we need -Kenneth</div>
+  <div>periodN=period_check()</div>
+  <div>regionN=region_check()</div>
+  <div>period = periodIs(periodN)</div>
+  <div>region = regionIs(regionN)</div>
+</div>
+</body>
+</html>
