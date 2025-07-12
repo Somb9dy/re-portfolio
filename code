@@ -1,0 +1,54 @@
+#functions used to recive inputs for later selection -Kenneth
+
+def period_check():
+    periodN = (input("Enter region (1: 1978-1987, 2: 1988-1897, 3: 1998-2007, 4: 2008-2017)"))
+    if periodN > "4" or periodN < "1" :
+            print("Invalid period")
+            exit()
+    if periodN == "1":
+        print(f"Enter year period (1: 1978-1987, 2: 1988-1897, 3: 1998-2007, 4: 2008-2017): 1")
+    elif periodN == "2":
+        print(f"Enter year period (1: 1978-1987, 2: 1988-1897, 3: 1998-2007, 4: 2008-2017): 2")
+    elif periodN == "3":
+        print(f"Enter year period (1: 1978-1987, 2: 1988-1897, 3: 1998-2007, 4: 2008-2017): 3")
+    elif periodN == "4":
+        print(f"Enter year period (1: 1978-1987, 2: 1988-1897, 3: 1998-2007, 4: 2008-2017): 4")
+    return periodN
+
+def region_check():
+    regionN = (input("Enter region (1: Asia, 2: Europe, 3: Others)"))
+    if regionN > "3" or regionN < "1":
+        print("Invalid region")
+        exit()
+    if regionN == "1" :
+        print(f"Enter region (1: Asia, 2: Europe, 3: Others): 1")
+    elif regionN == "2" :
+        print(f"Enter region (1: Asia, 2: Europe, 3: Others): 2")
+    elif regionN == "3" :
+        print(f"Enter region (1: Asia, 2: Europe, 3: Others): 3")
+    return regionN
+       
+#Function shows what rows to select -Kenneth
+def periodIs(x):
+    if x == "1":
+        return [0, 5, 119]
+    elif x == "2":
+        return [120, 125, 239]
+    elif x == "3":
+        return [240, 245, 359]
+    elif x == "4":
+        return [360, 365, 479]
+#Function helps us select columns -Kenneth
+def regionIs(x):
+    if x == "1":
+        return [' Brunei Darussalam ', ' Indonesia ', ' Malaysia ', ' Philippines ', ' Thailand ', ' Viet Nam ', ' Myanmar ', ' Japan ', ' Hong Kong ', ' China ', ' Taiwan ', ' Korea, Republic Of ', ' India ', ' Pakistan ', ' Sri Lanka ', ' Saudi Arabia ', ' Kuwait ', ' UAE ']
+    elif x == "2":
+        return [' United Kingdom ', ' Germany ', ' France ', ' Italy ', ' Netherlands ', ' Greece ', ' Belgium & Luxembourg ', ' Switzerland ', ' Austria ', ' Scandinavia ', ' CIS & Eastern Europe ']
+    elif x == "3":
+        return [' USA ', ' Canada ', ' Australia ', ' New Zealand ', ' Africa ']
+   
+#runs period and region check and  is then put into another function to find out what rows and columns we need -Kenneth
+periodN=period_check()
+regionN=region_check()
+period = periodIs(periodN)
+region = regionIs(regionN)
